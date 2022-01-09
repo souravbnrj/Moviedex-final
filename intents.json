@@ -1,0 +1,152 @@
+{ 
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "How are you",
+        "Is anyone there?",
+        "Hello",
+        "Good day"
+      ],
+      "responses": [
+        "Hey :-)",
+        "Hello, thanks for visiting",
+        "Hi there, what can I do for you?",
+        "Hi there, how can I help?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you later", "Goodbye"],
+      "responses": [
+        "See you later, thanks for visiting",
+        "Have a nice day",
+        "Bye! Come back again soon."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
+      "responses": ["Happy to help!", "Any time!", "My pleasure"]
+    },
+{
+      "tag": "Name",
+      "patterns": ["name", "what is your name?", "do you have a name?", "Tell Me your Name"],
+      "responses": ["MovieDex", "My name is MovieDex", "MovieDex That's my names"]
+    },
+    {
+      "tag": " video Not Working",
+      "patterns": ["The trailer is not working", "Video is not working"],
+      "responses": ["try to check your net connection if its ok then maybe the video is region restricted contact the developers"]
+    },
+    {
+      "tag": "Contact",
+      "patterns": ["How to contact them", "give me there Contact", "contact", "Contact","how do i contact them"],
+      "responses": ["souravbnrj99@gamil.com", "see the footer for the email or type any developer name", "try asking  for the developer"]
+    },
+    {
+      "tag": "Sourav banerjee",
+      "patterns": ["Sourav Banerjee", "who is sourav banerjee", "tell me about Sourav banerjee", "sourav"],
+      "responses": ["name : Sourav banerjee, mail: souravbnrj99@gamil.com, College: Uemk"]
+    },
+    {
+      "tag": "Archisman Banik",
+      "patterns": ["Archisman Banik", "who is Archisman Banik", "tell me about Archisman Banik", "Archisman"],
+      "responses": ["name : Archisman Banik, mail: banikarchisman23@gmail.com, College: Uemk"]
+    },
+    {
+      "tag": "Rishav naskar",
+      "patterns": ["Rishav Naskar", "who is Rishav naskar", "tell me about Rishav Naskar", "Rishav"],
+      "responses": ["name : Rishav Naskar, mail: rishav.naskar4900@gamil.com , College: Uemk" ]
+    },
+    {
+      "tag": "Sayon Kumar Das",
+      "patterns": ["Sayon Kumar das", "who is Sayon Kumar das", "tell me about sayon kumar das", "sayon","Bantu ke re"],
+      "responses": ["name : Sayon Kumar das, mail: Sayankar565@gamil.com , College: Uemk" ]
+    },
+    {
+      "tag": "Sandip haldar",
+      "patterns": ["Sandip haldar", "who is Sandip Haldar", "tell me about Sandip haldar", "Sandip"],
+      "responses": ["name : Sandip Haldar, mail: hsandip640@gamil.com , College: Uemk" ]
+    },
+    {
+      "tag": "Shubham singh",
+      "patterns": ["Shubham Singh", "who is Shubham Singh", "tell me about Shubham Singh", "Shubham"],
+      "responses": ["name : Shubham singh, mail: ss6902515@gamil.com , College: Uemk" ]
+    },
+{
+      "tag": "What",
+      "patterns": ["What is This site?", "what is this all about ", "what can i get from here"],
+      "responses": ["MOVIE DEX is a site for watching the latest trailer of movies from different genre"]
+    },
+    {
+      "tag": "items",
+      "patterns": [
+        "Which items do you have?",
+        "What kinds of items are there?",
+        "What do you show?"
+      ],
+      "responses": [
+        "We have all the trailer of latest movie!",
+        "We have latest movies of all genre"
+      ]
+    },
+{
+      "tag": "Movies",
+      "patterns": [
+        "can you Reccomend some movies",
+        "say some movies",
+        "best movies you can say"
+      ],
+      "responses": [
+        "you need tell me the genre ",
+        "What genre  do you prefer?",
+        "which type of movie you want to watch ?"
+      ]
+    },
+    {
+      "tag": "trailer",
+      "patterns": [
+        "How can i watch the trailers?",
+        "is there any option to watch trailers?",
+        "From Where can i watch the trailer",
+        "trailer","trailers"
+      ],
+      "responses": [
+        "You can watch from the green pop button ",
+        "click on the Green button on the movie trailer"
+      ]
+    },
+    {
+      "tag": "Action",
+      "patterns": [
+        "Some Action Movies ",
+        "Latest Action Movies",
+        "Whats the recent action movies"
+      ],
+      "responses": [
+        "You can watch the new movie Eternal, its Awesome",
+        "You can try Venome ","Why not try the some movies from Action Section"
+      ]
+    },
+    {
+      "tag": "Creators",
+      "patterns": ["Makers","Creators", "Who Code you?", "who are your Creators", "Who are your Developers","developers"],
+      "responses": ["1:Archisman banik ,2:Sourav Banerjee ,3:Sayon Kumar Das ,4:Rishav Naskar ,5:Shubam singh "]
+    },
+    {
+      "tag": "funny",
+      "patterns": [
+        "Tell me a joke!",
+        "Tell me something funny!",
+        "Do you know a joke?"
+      ],
+      "responses": [
+        "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
+        "What did the buffalo say when his son left for college? Bison."
+      ]
+    }
+  ]
+}

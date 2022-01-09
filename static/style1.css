@@ -1,0 +1,456 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color:#22254b;
+    --secondary-color: #373b69;
+}
+
+body{
+    background-color: black;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+
+}
+
+
+header{
+    padding:1rem;
+    display:flex;
+    justify-content: flex-end;
+    background-color: black;
+    color: white;
+  font-family: "Sen", sans-serif;
+}
+.logo-container {
+  flex: 1;
+  
+}
+.logo{
+  font-size: 15px;
+  color: green;
+  margin-left: 600px;
+}
+.left-menu-icon {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+.menu-container {
+  flex: 2;
+  display: flex;
+
+}
+.left-menu-icon {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+.search{
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    padding:0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    color:#fff;
+    font-family: inherit;
+}
+
+.search:focus{
+    outline:0;
+    background-color: var(--primary-color);
+}
+
+.search::placeholder{
+    color: #7378c5;
+}
+
+
+main{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+
+
+.movie-info h3{
+    margin-top: 0;
+}
+.overview{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color: #fff;
+    padding: 1rem;
+    max-height: 100%;
+    transform:translateY(101%);
+    transition:transform 0.3s ease-in;
+}
+
+.movie:hover .overview{
+    transform:translateY(0)
+}
+
+#tags{
+    width:80%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+}
+
+.tag{
+    color:white;
+    padding:10px 20px;
+    background-color:#ff4c34;
+    border-radius: 50px;
+    margin:5px;
+    display:inline-block;
+    cursor: pointer;
+}
+
+.tag.highlight{
+    background-color:#1dd31d;
+}
+.no-results{
+    color:white;
+}
+
+.pagination{
+  position: relative;
+    display:flex;
+    margin:10px 30px;
+    align-items: center;
+    justify-content: center;
+    color:white;
+}
+
+.page{
+    padding:20px;
+    cursor:pointer;
+}
+
+.page.disabled{
+    cursor:not-allowed;
+    color:grey;
+}
+
+.current{
+    padding: 10px 20px;
+    border-radius: 50%;
+    border: 5px solid orange;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.know-more{
+    background-color: orange;
+    color:white;
+    font-size: 16px;
+    font-weight: bold;
+    border:0;
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin-top: 5px;
+}
+/* The Overlay (background) */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  }
+  
+  /* Position the content inside the overlay */
+  .overlay-content {
+    position: relative;
+    top: 10%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+  }
+  
+  /* The navigation links inside the overlay */
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+  }
+  
+  /* Position the close button (top right corner) */
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+  
+  /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+  @media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+    }
+  }
+
+
+  .embed.hide{
+      display: none;
+  }
+
+  .embed.show{
+      display: inline-block;
+  }
+
+  .arrow{
+      position: absolute;
+      font-size: 40px;
+  }
+
+  .arrow.left-arrow{
+      top:50%;
+      left:5%;
+      transform: translateY(-50%);
+  }
+
+  
+  .arrow.right-arrow{
+    top:50%;
+    transform: translateY(-50%);
+    right:5%;
+}
+
+.dots{
+    margin-top: 30px;
+}
+
+.dots .dot {
+    padding: 5px 15px;
+    border-radius: 50%;
+    border: 5px solid var(--secondary-color);
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 5px;
+}
+
+.dots .dot.active{
+    border-color: orange;
+}
+.movie-list-item {
+  margin-right: 30px;
+  margin-top: 30px;
+  margin-left: 10px;
+  position: relative;
+}
+
+.movie-list-item:hover .movie-list-item-img {
+  transform: scale(1.2);
+  margin: 0 30px;
+  opacity: 0.5;
+}
+
+.movie-list-item:hover .movie-info,
+.movie-list-item:hover .movie-list-item-desc,
+.movie-list-item:hover .movie-list-item-button {
+  opacity: 1;
+}
+
+.movie-list-item-img {
+  transition: all 1s ease-in-out;
+  width: 270px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.movie-list-item-title {
+  background-color: none;
+  padding: 0 10px;
+  font-size: 32px;
+  font-weight: bold;
+  position: absolute;
+  top: 10%;
+  left: 50px;
+  opacity: 0;
+  transition: 1s all ease-in-out;
+}
+
+.movie-list-item-desc {
+   background-color: none;
+   color: white;
+  padding: 10px;
+  font-size: 14px;
+  position: absolute;
+  top: 30%;
+  left: 50px;
+  width: 230px;
+  opacity: 0;
+  transition: 1s all ease-in-out;
+}
+.movie-list-item-desc span{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:3;
+
+
+}
+.movie-list-item-button {
+  padding: 10px;
+  background-color: #4dbf00;
+  color: white;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  bottom: 20px;
+  left: 50px;
+  opacity: 0;
+  transition: 1s all ease-in-out;
+}
+.movie-info{
+  background-color: none;
+  color: Red;
+  padding: 0 10px;
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  top: 10%;
+  left: 50px;
+  opacity: 0;
+  transition: 1s all ease-in-out;
+  
+ 
+}
+
+.movie-info h3{
+    margin-top: 0;
+}
+
+.movie-info span{
+    background-color: none;
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.movie-info span.green{
+    color:lightgreen;
+}
+
+.movie-info span.orange{
+    color:orange;
+}
+
+.movie-info span.red{
+    color:red;
+}
+.footer {
+display: flex;
+flex-flow: row wrap;
+padding: 50px;
+color: #fff;
+background-color: #151515;
+}
+
+.footer > * {
+flex:  1 100%;
+}
+
+.l-footer {
+margin-right: 1.25em;
+margin-bottom: 2em;
+}
+
+h2 {
+font-weight: 400;
+font-size: 15px;
+}
+
+.footer ul {
+list-style: none;
+padding-left: 0;
+}
+
+.footer li {
+line-height: 2em;
+}
+
+.footer a {
+text-decoration: none;
+}
+
+.r-footer {
+display: flex;
+flex-flow: row wrap;
+}
+
+.r-footer > * {
+flex: 1 50%;
+margin-right: 1.25em;
+}
+
+.box a {
+color: #999;
+}
+
+.h-box {
+column-count: 2;
+column-gap: 1.25em;
+}
+
+.b-footer {
+text-align: center;
+color: #999;
+padding-top: 50px;
+}
+
+.l-footer p {
+padding-right: 20%;
+color: #999;
+}   
+
+@media screen and (min-width: 600px) {
+.r-footer > * {
+flex: 1;
+}
+
+.features {
+flex-grow: 2;
+}
+
+.l-footer {
+flex: 1 0px;
+}
+
+.r-footer {
+flex: 2 0px;
+}
+}
+
